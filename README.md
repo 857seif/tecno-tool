@@ -10,4 +10,4 @@
 <img width="1261" height="649" alt="Image" src="https://github.com/user-attachments/assets/b16a2531-0dc3-480f-8667-7a2c7735af6d" />
 <img width="1264" height="614" alt="Image" src="https://github.com/user-attachments/assets/ccccdfb8-f10d-4204-b5d7-8e922597a64e" />
 download from here https://raw.githubusercontent.com/857seif/tecno-tool/refs/heads/main/tecno-tools.rar
-open source but you shoud read all the code in all the files becase i removed some of impo thinges 😂
+open source but you shoud read all the code in all the files becase i removed some of important thinges 😂
