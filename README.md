@@ -6,5 +6,5 @@
 > Also, it is easier to use than Steam Tools.
 > # in a first time for useing this tool click the fix botum to fix steam and enjoy
 <img width="1261" height="649" alt="Image" src="https://github.com/user-attachments/assets/b16a2531-0dc3-480f-8667-7a2c7735af6d" />
-<img width="1265" height="922" alt="Image" src="https://github.com/user-attachments/assets/e7f6fdff-bcfc-4ab9-9680-ead9fd04ddd1" />
+
 download from here https://raw.githubusercontent.com/857seif/tecno-tool/refs/heads/main/tecno-tools.rar
