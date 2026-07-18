@@ -678,8 +678,6 @@ class DownloadWorker(QRunnable):
         except Exception as e:
             self.sig.finished.emit(False, str(e))
 
-# ManifestWorker completely removed because it relied on polarservices.org
-# The AddTab no longer uses it; only drag-and-drop is available.
 
 class LibraryGameSig(QObject):
     loaded = pyqtSignal(str, QPixmap, str)
