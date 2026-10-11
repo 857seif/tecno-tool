@@ -71,6 +71,8 @@ def get_steam_username():
     except:
         return get_username()
 
+
+
 def get_steam_discord_id():
     try:
         steam_path = get_steam_path()
