@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not Techno Tool</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="root">
+  <div id="gradient"></div>
+
+  <div class="wrap">
+    <div id="titlebar" data-tauri-drag-region>
+      <div class="tb-left">
+        <span class="tb-icon">&#9889;</span>
+        <span class="tb-title">Not Techno Tool</span>
+      </div>
+      <div class="tb-lights" id="lights">
+        <button class="bulb red" data-role="close" title="Close"><span class="g">&times;</span></button>
+        <button class="bulb yellow" data-role="min" title="Minimize"><span class="g">&minus;</span></button>
+        <button class="bulb green" data-role="max" title="Maximize"><span class="g">+</span></button>
+      </div>
+    </div>
+
+    <div id="body">
+      <div id="sidebar">
+        <div class="brand">
+          <span class="brand-logo">&#9889;</span>
+          <div class="brand-txt">
+            <div class="brand-name">NOT TECHNO TOOL</div>
+            <div class="brand-sub">v1.9</div>
+          </div>
+        </div>
+
+        <div class="nav" id="nav">
+          <div class="nav-section">MAIN</div>
+          <button class="nav-btn" data-page="add">&#128229;&nbsp;&nbsp; Add</button>
+          <button class="nav-btn" data-page="library">&#128218;&nbsp;&nbsp; Library</button>
+          <div class="nav-section">TOOLS</div>          <div class="nav-section">APP</div>
+          <button class="nav-btn" data-page="settings">&#9881;&#65039;&nbsp;&nbsp; Settings</button>
+          <div class="nav-sep"></div>
+          <div class="nav-section">OPTIONS</div>
+
+          <div class="options">
+          <button class="tog" data-toggle="family" style="--s:#dc2626;--e:#f87171;--t:#ffffff">&#128106;  Family Share    <em>ON</em></button>
+          <button class="tog" data-toggle="update" style="--s:#f97316;--e:#fbbf24;--t:#1a0f08">&#128260;  Last Update    <em>ON</em></button>
+          <button class="tog" data-toggle="dlc" style="--s:#facc15;--e:#fde047;--t:#1a0f08">&#128275;  DLC Unlock    <em>ON</em></button>
+          <button class="act" id="btn-cloud">&#9729;&nbsp;&nbsp; Cloud Fix</button>
+          <button class="act" id="btn-reset">&#9851;&nbsp;&nbsp; Reset Steam</button>
+          <button class="act green" id="btn-steam">&#9654;&nbsp;&nbsp; Launch Steam</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="content">
+
+        <div class="page" id="page-add">
+          <div class="prov-box">
+            <div class="prov-title">&#128225;&nbsp;&nbsp; Download Source</div>
+            <div class="prov-row">
+              <select id="provider"></select>
+              <button id="add-provider">+&nbsp;&nbsp;Add Provider</button>
+              <button id="del-provider" title="Delete selected custom provider">&#10005;</button>
+            </div>
+            <div class="hint" id="provider-hint">Automatically finds the best available source.</div>
+          </div>
+
+          <div class="mode">
+            <label class="radio"><input type="radio" name="addmode" value="search" checked> Search by name</label>
+            <label class="radio"><input type="radio" name="addmode" value="manual"> Direct AppID</label>
+          </div>
+
+          <input id="search-name" class="input" placeholder="Enter game name...">
+          <input id="manual-appid" class="input hidden" placeholder="Enter AppID...">
+
+          <div id="search-results" class="list"></div>
+
+          <div class="status-line" id="add-status">Ready</div>
+          <button id="dl-script" class="btn" disabled>Download Script</button>
+
+          <div class="sep"></div>
+
+          <div class="groupbox">Add local .lua file
+            <div class="dropzone" id="dropzone">Drop .lua file here</div>
+          </div>
+        </div>
+
+        <div class="page" id="page-library">
+          <div class="page-head">
+            <button id="lib-refresh" class="btn sm">&#128260; Refresh</button>
+            <input id="lib-search" class="input" placeholder="&#128269;  Search...">
+            <div class="count" id="lib-count"></div>
+          </div>
+          <div class="status-line hidden" id="lib-status"></div>
+          <div class="list scroll" id="lib-list"></div>
+        </div>
+<div class="simple-desc">Download &amp; extract Steam Achievement Manager.</div>
+          <div class="sep"></div>
+          <div class="flex-spacer"></div>
+          <button class="big-btn" data-simple="achievements">&#11015;&#65039;  Download &amp; Extract SAM</button>
+          <div class="progress"><div class="bar"></div></div>
+          <div class="simple-status" id="st-achievements">Click the button to download.</div>
+          <div class="flex-spacer"></div>
+        </div>
+
+        <div class="page" id="page-settings">
+          <div class="page-title lg">&#9881;   Settings</div>
+          <div class="page-desc">Tune the theme colors and the background animation. Changes are saved automatically.</div>
+          <div class="scroll settings-scroll">
+            <div class="groupbox">Update
+              <div class="upd-ver" id="upd-ver">Installed version:  v1.9</div>
+              <div class="upd-status" id="upd-status">Not checked yet.</div>
+              <div class="upd-row">
+                <button id="upd-check" class="btn upd-check">&#128269;   Check for Update</button>
+              </div>
+              <button id="upd-dl" class="btn upd-dl hidden">&#127760;   Open Download Page</button>
+            </div>
+            <div class="groupbox">Background &amp; Theme Colors
+              <div id="color-rows"></div>
+            </div>
+            <div class="groupbox">Animation
+              <div class="crow">
+                <div class="crow-label">Speed</div>
+                <input type="range" id="speed" min="0" max="500" value="100">
+                <div class="hex" id="speed-lbl">100%</div>
+              </div>
+            </div>
+            <button id="reset-theme" class="btn ghost">&#8634;   Reset to defaults</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="rz n"></div><div class="rz s"></div>
+  <div class="rz e"></div><div class="rz w"></div>
+  <div class="rz ne"></div><div class="rz nw"></div>
+  <div class="rz se"></div><div class="rz sw"></div>
+</div>
+
+<div id="modals"></div>
+<div id="toasts"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
